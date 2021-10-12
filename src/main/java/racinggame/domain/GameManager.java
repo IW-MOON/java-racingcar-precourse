@@ -46,14 +46,14 @@ public class GameManager {
         long distance = carDistance.getDistance();
         StringBuilder dash = new StringBuilder();
         while (distance > 0) {
-            dash.append("-");
+            dash.append(GameRule.CAR_MOVING_DISTANCE_STATE);
             distance--;
         }
         return dash.toString();
     }
 
     public String getWinnerCarNames(CarList carList){
-        StringJoiner winCarNames = new StringJoiner(",");
+        StringJoiner winCarNames = new StringJoiner(GameRule.CAR_NAME_SEPARATOR);
         CarList winnerCarList = getWinnerCarList(carList);
         for (Car car : winnerCarList.getCarList()) {
             winCarNames.add(car.getCarName().getCarName());

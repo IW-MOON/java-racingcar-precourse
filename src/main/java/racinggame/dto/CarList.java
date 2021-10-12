@@ -1,5 +1,6 @@
 package racinggame.dto;
 
+import racinggame.GameRule;
 import racinggame.validation.InputValidationCheck;
 
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class CarList {
     public static CarList separateCarNames(String carNames) {
 
         List<Car> carList = new ArrayList<>();
-        String[] carNameArr = carNames.split(",");
+        String[] carNameArr = carNames.split(GameRule.CAR_NAME_SEPARATOR);
         InputValidationCheck.validateCarCount(carNameArr);
 
         for (String carName : carNameArr) {

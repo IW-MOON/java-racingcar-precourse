@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import racinggame.GameRule;
 
 public class CarListTest {
 
@@ -15,6 +16,6 @@ public class CarListTest {
         // when
         CarList carList = CarList.separateCarNames(carName);
         // then
-        assertThat(carList.getCarList().size()).isEqualTo(carName.split(",").length);
+        assertThat(carList.getCarList().size()).isEqualTo(carName.split(GameRule.CAR_NAME_SEPARATOR).length);
     }
 }
